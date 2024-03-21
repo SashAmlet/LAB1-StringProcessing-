@@ -29,9 +29,9 @@ vector<string> split(const string& input) {
 }
 
 bool hasDoubleConsonants(const string& word) {
-
+    char vowels[] = "aeiou";
     for (size_t i = 0; i < word.length() - 1; ++i) {
-        if (word[i] == word[i + 1]) {
+        if (word[i] == word[i + 1] and find(begin(vowels), end(vowels), tolower(word[i])) == end(vowels)) {
             return true;
         }
     }
@@ -51,7 +51,7 @@ vector<string> findWordsWithDoubleConsonants(const vector<string>& words) {
 
 
 int main() {
-    ifstream in("C:\\Users\\ostre\\OneDrive\\Books\\3rd course\\System programming\\LAB1(StringProcessing)\\LAB1(StringProcessing)\\test.txt");
+    ifstream in("test.txt");
     string line;
     vector<string> words, result;
 
